@@ -7,6 +7,9 @@ public class Shell : MonoBehaviour
     private int _damage;
     private float _lifeTime;
 
+    public float RechargeTime = 2.0f;
+
+
     private void Start()
     {
         _damage = 20;
