@@ -656,3 +656,15 @@ MonoBehaviour:
   shells:
   - {fileID: 164011533251659185, guid: beac031bab809d14d9e097d17eb922d8, type: 3}
   spawnPoint: {fileID: 1524327975}
+--- !u!114 &1645173356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1645173350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e08cbeed68306a41b34058a6135df61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
