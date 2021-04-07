@@ -9,10 +9,12 @@ public class SettingsPopup : MonoBehaviour
         if (gameObject.activeSelf)
         {
             gameObject.SetActive(false);
+            Pause.ResumeGame();
         }
         else
         {
             gameObject.SetActive(true);
+            Pause.PauseGame();
         }
     }
 }
