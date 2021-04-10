@@ -247,7 +247,7 @@ GameObject:
   - component: {fileID: 8460451011533842125}
   - component: {fileID: 8460451011533842126}
   m_Layer: 0
-  m_Name: Turrel 1
+  m_Name: Turrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -262,7 +262,7 @@ Transform:
   m_GameObject: {fileID: 8460451011533842127}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -331.2378, y: 0, z: 515}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
   m_Children:
   - {fileID: 367859861683937288}
   - {fileID: 367859860504500194}
