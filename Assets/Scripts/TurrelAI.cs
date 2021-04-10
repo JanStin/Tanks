@@ -14,6 +14,12 @@ public class TurrelAI : MonoBehaviour
 
     public bool InTriggerZone;
 
+    private void Start()
+    {
+        _health = 100;
+        InTriggerZone = false;
+    }
+
     private void Update()
     {
         if (InTriggerZone)
@@ -33,6 +39,16 @@ public class TurrelAI : MonoBehaviour
 
                 _rechargeTimer = 0;
             }
+        }
+    }
+
+    public void GetDamage(int damage)
+    {
+        _health -= damage;
+
+        if (_health <= 0)
+        {
+            Destroy(gameObject);
         }
     }
 }
