@@ -3,7 +3,7 @@
 public class ShootPlayer : MonoBehaviour
 {
     [SerializeField] private GameObject[] shells;
-    [SerializeField] private Transform spawnPoint;
+    [SerializeField] private Transform firePoint;
 
     private float _rechargeTime;
     private float _rechargeTimer;
@@ -14,9 +14,9 @@ public class ShootPlayer : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1") && _rechargeTimer > _rechargeTime)
         {
-            GameObject shell = Instantiate(shells[0], spawnPoint.position, spawnPoint.rotation) as GameObject;
+            GameObject shell = Instantiate(shells[0], firePoint.position, firePoint.rotation) as GameObject;
             Rigidbody shellRigidbody = shell.GetComponent<Rigidbody>();
-            shellRigidbody.velocity = 20.0f * spawnPoint.forward;
+            shellRigidbody.velocity = 20.0f * firePoint.forward;
             _rechargeTime = shell.GetComponent<Shell>().RechargeTime;
 
             _rechargeTimer = 0;
