@@ -212,6 +212,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 100124, guid: 002e2a607f5b64c48be0b3b0d8b8bfdd, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 400112, guid: 002e2a607f5b64c48be0b3b0d8b8bfdd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -325
@@ -1092,8 +1096,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.5, y: 1.8, z: 2}
+  m_Center: {x: 0, y: 0.9, z: 0}
 --- !u!54 &1645173353
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1273,6 +1277,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 367859861683937289, guid: b9657cbbcb1a8014790c4bc2b74fb8bd,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 8460451011533842125, guid: b9657cbbcb1a8014790c4bc2b74fb8bd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1340,3 +1349,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9657cbbcb1a8014790c4bc2b74fb8bd, type: 3}
+--- !u!1 &8102936457101143060 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8460451011533842127, guid: b9657cbbcb1a8014790c4bc2b74fb8bd,
+    type: 3}
+  m_PrefabInstance: {fileID: 367859861519780571}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &8102936457101143063
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8102936457101143060}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5, y: 2, z: 1.5}
+  m_Center: {x: 0, y: 1, z: 0}

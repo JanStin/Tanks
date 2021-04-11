@@ -34,6 +34,7 @@ public class TurrelAI : MonoBehaviour
             {
                 GameObject relShell = Instantiate(shell, firePoint.position, firePoint.rotation) as GameObject;
                 Rigidbody shellRigidbody = relShell.GetComponent<Rigidbody>();
+                shell.GetComponent<Shell>().ParentTag = "Enemy";
                 shellRigidbody.velocity = 20.0f * firePoint.forward;
                 _rechargeTime = shell.GetComponent<Shell>().RechargeTime;
 
@@ -42,9 +43,9 @@ public class TurrelAI : MonoBehaviour
         }
     }
 
-    public void GetDamage(int damage)
+    public void ChangeHealth(int value)
     {
-        _health -= damage;
+        _health += value;
 
         if (_health <= 0)
         {

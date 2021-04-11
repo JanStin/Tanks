@@ -16,6 +16,7 @@ public class ShootPlayer : MonoBehaviour
         {
             GameObject shell = Instantiate(shells[0], firePoint.position, firePoint.rotation) as GameObject;
             Rigidbody shellRigidbody = shell.GetComponent<Rigidbody>();
+            shell.GetComponent<Shell>().ParentTag = "Player";
             shellRigidbody.velocity = 20.0f * firePoint.forward;
             _rechargeTime = shell.GetComponent<Shell>().RechargeTime;
 

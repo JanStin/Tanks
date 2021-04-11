@@ -7,6 +7,11 @@ public class PlayerCharater : MonoBehaviour
     private int _health;
     private readonly int _maxHealth = 100;
 
+    private void Start()
+    {
+        _health = 100;
+    }
+
     public void ChangeHealth(int value)
     {
         _health += value;

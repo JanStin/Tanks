@@ -8,6 +8,7 @@ public class Shell : MonoBehaviour
     private float _lifeTime;
 
     public float RechargeTime = 2.0f;
+    public string ParentTag;
 
 
     private void Start()
@@ -18,12 +19,33 @@ public class Shell : MonoBehaviour
         Destroy(gameObject, _lifeTime);
     }
 
-    private void OnTriggerEnter(Collider other)
+
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.CompareTag("Enemy"))
+        if (ParentTag.Equals("Player"))
         {
-            Debug.Log("Enemy get damage " + _damage);
-            Destroy(gameObject);
+            if (!collision.gameObject.CompareTag("Player"))
+            {
+                if (collision.gameObject.GetComponent<TurrelAI>())
+                {
+                    collision.gameObject.GetComponent<TurrelAI>().ChangeHealth(-_damage);
+                }
+                Destroy(gameObject);
+            }
         }
+        else if (ParentTag.Equals("Enemy"))
+        {
+            if (!collision.gameObject.CompareTag("Enemy"))
+            {
+                if (collision.gameObject.GetComponent<PlayerCharater>())
+                {
+                    collision.gameObject.GetComponent<PlayerCharater>().ChangeHealth(-_damage);
+                }
+                Destroy(gameObject);
+            }
+        } 
+        
     }
+
+
 }

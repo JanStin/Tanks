@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 164011533253925745}
   - component: {fileID: 1140581278163104914}
   - component: {fileID: 5506436921249306271}
+  - component: {fileID: 1247115041732371125}
   m_Layer: 0
   m_Name: Shell
   m_TagString: Untagged
@@ -109,3 +110,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d18dc4708a76dd34da99b68a2943dfa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RechargeTime: 2
+--- !u!136 &1247115041732371125
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 164011533251659185}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.25
+  m_Height: 0.2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.000000007450581, z: 0.19800001}
