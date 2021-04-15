@@ -19,4 +19,9 @@ public class UIController : MonoBehaviour
         settingsPopup.ChangeActive();
     }
 
+    public void ChangeHealthBar(int value)
+    {
+        healthText.text = $"Health {value}";
+    }
+
 }

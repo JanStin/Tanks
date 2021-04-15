@@ -4,27 +4,8 @@ using UnityEngine;
 
 public class PlayerCharater : MonoBehaviour
 {
-    private int _health;
-    private readonly int _maxHealth = 100;
-
-    private void Start()
+    public void GetDamage(int damage)
     {
-        _health = 100;
-    }
-
-    public void ChangeHealth(int value)
-    {
-        _health += value;
-
-        if (_health > _maxHealth)
-        {
-            _health = 100;
-        } 
-        else if (_health <= 0)
-        {
-            _health = 0;
-            Debug.Log("You lose...");
-        }
-
+        Managers.Player.ChangeHealth(-damage);
     }
 }

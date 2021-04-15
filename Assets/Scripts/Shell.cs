@@ -39,7 +39,7 @@ public class Shell : MonoBehaviour
             {
                 if (collision.gameObject.GetComponent<PlayerCharater>())
                 {
-                    collision.gameObject.GetComponent<PlayerCharater>().ChangeHealth(-_damage);
+                    collision.gameObject.GetComponent<PlayerCharater>().GetDamage(_damage);
                 }
                 Destroy(gameObject);
             }
