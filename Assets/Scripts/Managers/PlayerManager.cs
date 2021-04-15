@@ -28,6 +28,12 @@ public class PlayerManager : MonoBehaviour, IGameManager
             _health = 0;
             Debug.Log("You lose...");
         }
+        Messenger.Broadcast(GameEvent.HEALTH_UPDATED);
+    }
+
+    public int GetHealth()
+    {
+        return _health;
     }
 
 

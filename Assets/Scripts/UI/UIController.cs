@@ -11,7 +11,18 @@ public class UIController : MonoBehaviour
 
     private void Start()
     {
-        settingsPopup.ChangeActive();
+        OnHealthUpdated();
+        settingsPopup.ChangeActive();        
+    }
+
+    private void Awake()
+    {
+        Messenger.AddListener(GameEvent.HEALTH_UPDATED, OnHealthUpdated);
+    }
+
+    private void OnDestroy()
+    {
+        Messenger.RemoveListener(GameEvent.HEALTH_UPDATED, OnHealthUpdated);
     }
 
     public void OnOpenSettings()
@@ -19,9 +30,11 @@ public class UIController : MonoBehaviour
         settingsPopup.ChangeActive();
     }
 
-    public void ChangeHealthBar(int value)
+    private void OnHealthUpdated()
     {
-        healthText.text = $"Health {value}";
+        string health = Managers.Player.GetHealth().ToString();
+        string message = $"Health:{health}/100";
+        healthText.text = message;
     }
 
 }
