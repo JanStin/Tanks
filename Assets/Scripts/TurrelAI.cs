@@ -49,7 +49,13 @@ public class TurrelAI : MonoBehaviour
 
         if (_health <= 0)
         {
-            Destroy(gameObject);
+            Die();
         }
+    }
+
+    private void Die()
+    {
+        Messenger.Broadcast(GameEvent.SCORE);
+        Destroy(gameObject);
     }
 }
