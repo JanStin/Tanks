@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 367859861683937295}
   m_Layer: 0
   m_Name: P_Turret
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -246,6 +246,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8460451011533842125}
   - component: {fileID: 8460451011533842126}
+  - component: {fileID: 8102936457101143063}
   m_Layer: 0
   m_Name: Turrel
   m_TagString: Enemy
@@ -282,7 +283,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c265f84baed57624097cf912d5f60d1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 7485462020675934740, guid: a29bce4ef6050e441b3c482adab0874c, type: 3}
   shell: {fileID: 164011533251659185, guid: beac031bab809d14d9e097d17eb922d8, type: 3}
   firePoint: {fileID: 136452655}
   InTriggerZone: 0
+--- !u!65 &8102936457101143063
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8460451011533842127}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5, y: 2, z: 1.5}
+  m_Center: {x: 0, y: 1, z: 0}

@@ -15,6 +15,6 @@ public class SpawnTurrels : MonoBehaviour
 
     private void Spawn()
     {
-        Instantiate(turrelPrefab, Platform, true);
+        Instantiate(turrelPrefab, Platform.position, Quaternion.identity);
     }
 }
