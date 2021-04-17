@@ -282,7 +282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c265f84baed57624097cf912d5f60d1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  player: {fileID: 7485462020675934740, guid: a29bce4ef6050e441b3c482adab0874c, type: 3}
   shell: {fileID: 164011533251659185, guid: beac031bab809d14d9e097d17eb922d8, type: 3}
   firePoint: {fileID: 136452655}
   InTriggerZone: 0

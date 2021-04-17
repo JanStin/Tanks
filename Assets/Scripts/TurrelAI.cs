@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class TurrelAI : MonoBehaviour
 {
-    [SerializeField] private Transform target;
     [SerializeField] private GameObject shell;
     [SerializeField] private Transform firePoint;
 
+    private Transform _target;
     private int _health { get; set; }
     private float _rechargeTime { get; set; }
     private float _rechargeTimer { get; set; }
@@ -24,7 +24,8 @@ public class TurrelAI : MonoBehaviour
     {
         if (InTriggerZone)
         {
-            Vector3 direction = (target.position - transform.position).normalized;
+            _target = FindObjectOfType<PlayerCharater>().transform;
+            Vector3 direction = (_target.position - transform.position).normalized;
             Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
             transform.rotation = Quaternion.Lerp(transform.rotation, lookRotation, Time.deltaTime * 3.0f);
 
