@@ -10,9 +10,6 @@ public class SpawnTurrels : MonoBehaviour
     private readonly float _minmaxX = 100f;
     private readonly float _minmaxZ = 100f;
     
-
-
-
     private void Start()
     {
         foreach (Transform spawnPoint in spawnPoints)
