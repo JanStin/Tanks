@@ -111,6 +111,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RechargeTime: 2
+  ParentTag: 
+  explosionParticlesPrefab: {fileID: 6523432528887573939, guid: 2fcd1b91c81bc3b4da977d023374946c,
+    type: 3}
 --- !u!136 &1247115041732371125
 CapsuleCollider:
   m_ObjectHideFlags: 0

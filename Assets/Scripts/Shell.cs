@@ -9,6 +9,7 @@ public class Shell : MonoBehaviour
 
     public float RechargeTime = 2.0f;
     public string ParentTag;
+    public GameObject explosionParticlesPrefab;
 
 
     private void Start()
@@ -30,7 +31,7 @@ public class Shell : MonoBehaviour
                 {
                     collision.gameObject.GetComponent<TurrelAI>().ChangeHealth(-_damage);
                 }
-                Destroy(gameObject);
+                Explosion();
             }
         }
         else if (ParentTag.Equals("Enemy"))
@@ -41,11 +42,20 @@ public class Shell : MonoBehaviour
                 {
                     collision.gameObject.GetComponent<PlayerCharater>().GetDamage(_damage);
                 }
-                Destroy(gameObject);
+                Explosion();
             }
         } 
         
     }
 
+    private void Explosion()
+    {
+        if (explosionParticlesPrefab)
+        {
+            GameObject explosion = Instantiate(explosionParticlesPrefab, transform.position, explosionParticlesPrefab.transform.rotation) as GameObject;
+            Destroy(explosion, explosion.GetComponent<ParticleSystem>().main.startLifetimeMultiplier);
+        }
+        Destroy(gameObject);
+    }
 
 }
