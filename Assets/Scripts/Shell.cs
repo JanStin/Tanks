@@ -53,12 +53,9 @@ public class Shell : MonoBehaviour
         if (explosionParticlesPrefab)
         {
             GameObject explosion = Instantiate(explosionParticlesPrefab, transform.position, explosionParticlesPrefab.transform.rotation) as GameObject;
-
-            
+   
             Destroy(explosion, explosion.GetComponent<ParticleSystem>().main.startLifetimeMultiplier);
         }
-
-        GetComponent<AudioSource>().Play();
         Destroy(gameObject);
     }
 

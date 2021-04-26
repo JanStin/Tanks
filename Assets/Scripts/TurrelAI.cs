@@ -22,7 +22,7 @@ public class TurrelAI : MonoBehaviour
 
     private void Update()
     {
-        if (InTriggerZone)
+        if (InTriggerZone && !Pause.IsPause())
         {
             _target = FindObjectOfType<PlayerCharater>().transform;
             Vector3 direction = (_target.position - transform.position).normalized;
@@ -33,6 +33,8 @@ public class TurrelAI : MonoBehaviour
 
             if (_rechargeTimer > _rechargeTime)
             {
+                GetComponent<AudioSource>().Play();
+
                 GameObject relShell = Instantiate(shell, firePoint.position, firePoint.rotation) as GameObject;
                 Rigidbody shellRigidbody = relShell.GetComponent<Rigidbody>();
                 shell.GetComponent<Shell>().ParentTag = "Enemy";

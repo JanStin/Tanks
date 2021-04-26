@@ -10,6 +10,11 @@ public class ShootPlayer : MonoBehaviour
 
     private void Update()
     {
+        if (Pause.IsPause())
+        {
+            return;
+        }
+
         _rechargeTimer += Time.deltaTime;
 
         if (Input.GetButtonDown("Fire1") && _rechargeTimer > _rechargeTime)
