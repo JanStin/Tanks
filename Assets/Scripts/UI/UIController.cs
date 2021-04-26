@@ -15,7 +15,8 @@ public class UIController : MonoBehaviour
     {
         _score = 0;
         OnHealthUpdated();
-        settingsPopup.ChangeActive();        
+        settingsPopup.ChangeActive();
+        MouseLock(settingsPopup.gameObject.activeSelf);
     }
 
     private void Awake()
@@ -30,9 +31,27 @@ public class UIController : MonoBehaviour
         Messenger.RemoveListener(GameEvent.SCORE, ChangeScore);
     }
 
-    public void OnOpenSettings()
+    private void Update()
     {
-        settingsPopup.ChangeActive();
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            settingsPopup.ChangeActive();
+            MouseLock(settingsPopup.gameObject.activeSelf);
+        }
+    }
+
+    private void MouseLock(bool active)
+    {
+        if (!active)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
     }
 
     private void OnHealthUpdated()
@@ -48,4 +67,9 @@ public class UIController : MonoBehaviour
         scoreText.text = $"Score:{_score.ToString()}";
     }
 
+    public void OnOpenSettings()
+    {
+        settingsPopup.ChangeActive();
+        MouseLock(settingsPopup.gameObject.activeSelf);
+    }
 }

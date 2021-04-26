@@ -7,7 +7,7 @@ public class SettingsPopup : MonoBehaviour
     public void ChangeActive()
     {
         if (gameObject.activeSelf)
-        {
+        {            
             gameObject.SetActive(false);
             Pause.ResumeGame();
         }
@@ -16,5 +16,10 @@ public class SettingsPopup : MonoBehaviour
             gameObject.SetActive(true);
             Pause.PauseGame();
         }
+    }
+
+    public void OnSoundsVolue(float volume)
+    {
+        Managers.Audio.SoundsVolume = volume;
     }
 }
