@@ -20,6 +20,8 @@ public class ShootPlayer : MonoBehaviour
             shellRigidbody.velocity = 20.0f * firePoint.forward;
             _rechargeTime = shell.GetComponent<Shell>().RechargeTime;
 
+            GetComponent<AudioSource>().Play();
+
             _rechargeTimer = 0;
         }
     }
