@@ -12,11 +12,9 @@ public class SpawnTurrels : MonoBehaviour
     
     private void Start()
     {
-        foreach (Transform spawnPoint in spawnPoints)
-        {
-            Spawn(spawnPoint);
-        }        
+        NewGameSpawn();
     }
+
 
     private void Spawn(Transform spawnPoint)
     {
@@ -28,6 +26,14 @@ public class SpawnTurrels : MonoBehaviour
             float z = Random.Range(-_minmaxZ, _minmaxZ) + spawnPoint.position.z;   
 
             Instantiate(turrelPrefab, new Vector3(x, 0, z), Quaternion.identity);
+        }
+    }
+
+    public void NewGameSpawn()
+    {
+        foreach (Transform spawnPoint in spawnPoints)
+        {
+            Spawn(spawnPoint);
         }
     }
 }

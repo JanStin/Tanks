@@ -72,4 +72,10 @@ public class UIController : MonoBehaviour
         settingsPopup.ChangeActive();
         MouseLock(settingsPopup.gameObject.activeSelf);
     }
+
+    public void NullifyScore()
+    {
+        _score = 0;
+        scoreText.text = $"Score:{_score.ToString()}";
+    }
 }

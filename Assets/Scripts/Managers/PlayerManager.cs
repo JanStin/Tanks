@@ -22,11 +22,11 @@ public class PlayerManager : MonoBehaviour, IGameManager
         if (_health > _maxHealth)
         {
             _health = 100;
-        } 
+        }
         else if (_health <= 0)
         {
             _health = 0;
-            Debug.Log("You lose...");
+            NewGame();
         }
         Messenger.Broadcast(GameEvent.HEALTH_UPDATED);
     }
@@ -36,5 +36,22 @@ public class PlayerManager : MonoBehaviour, IGameManager
         return _health;
     }
 
+    private void NewGame()
+    {
+        _health = 100;
+        GameObject player = GameObject.Find("Player");
+        player.GetComponent<Rigidbody>().MovePosition(new Vector3(-330, 0, 450));
 
+        GameObject[] turrels = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject turrel in turrels)
+        {
+            Destroy(turrel);
+        }
+
+        GameObject spawnTurrels = GameObject.Find("Spawn Points");
+        spawnTurrels.GetComponent<SpawnTurrels>().NewGameSpawn();
+
+        GameObject sceneController = GameObject.Find("SceneController");
+        sceneController.GetComponent<UIController>().NullifyScore();
+    }
 }
