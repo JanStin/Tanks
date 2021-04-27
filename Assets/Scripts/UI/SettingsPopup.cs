@@ -22,4 +22,9 @@ public class SettingsPopup : MonoBehaviour
     {
         Managers.Audio.SoundsVolume = volume;
     }
+
+    public void OnMusicValue(float volume)
+    {
+        Managers.Audio.MusicVolume = volume;
+    }
 }
